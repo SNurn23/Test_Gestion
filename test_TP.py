@@ -21,16 +21,15 @@ def login(browser, username, password):
 #TEST CASE N°1: Inicio de sesión exitoso con credenciales válidas
 def test_login_valid_credentials(browser):
 
-    login(browser,  "...", "...")
+    login(browser,"...", "...")
     
-    # Verificar que el inicio de sesión fue exitoso redirigiendo a la página principal del campus
-    assert "CAMPUS VIRTUAL UGD" in browser.title
-    assert "https://campusvirtual.ugd.edu.ar/moodle/" in browser.current_url
+    # Verificar que el inicio de sesión fue exitoso redirigiendo a la página principal del campuscls
+    assert "https://campusvirtual.ugd.edu.ar/moodle/" == browser.current_url
 
 #TEST CASE N°2: Error en inicio de sesión con credenciales inválidas
 def test_login_invalid_credentials(browser):
     
-    login(browser,  "...", "...")
+    login(browser,"...", "...")
 
     try:
         error_message = browser.find_element(By.CLASS_NAME, "loginerrors")
