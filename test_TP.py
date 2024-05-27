@@ -23,7 +23,7 @@ def test_login_valid_credentials(browser):
 
     login(browser,"...", "...")
     
-    # Verificar que el inicio de sesión fue exitoso redirigiendo a la página principal del campuscls
+    # Verificar que el inicio de sesión fue exitoso redirigiendo a la página principal del campus
     assert "https://campusvirtual.ugd.edu.ar/moodle/" == browser.current_url
 
 #TEST CASE N°2: Error en inicio de sesión con credenciales inválidas
@@ -40,7 +40,8 @@ def test_login_invalid_credentials(browser):
 #TEST CASE N°3: Titulo correcto al ingresar al aula de la materia
 def test_correct_title_course(browser):
 
-    login(browser, "...", "...")
+    login(browser,"...", "...")
+    courseTitle = "GESTION DE LA CALIDAD Y AUDITORIA"
 
     #Se esperará un maximo de 10 segundos hasta que la sección "Mis cursos" se cargue en la página
     WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.ID, "frontpage-course-list")))    
@@ -52,7 +53,7 @@ def test_correct_title_course(browser):
         pytest.fail(f"No se pudo acceder al curso: {str(err)}")
 
     WebDriverWait(browser, 10).until(EC.title_contains("GESTION DE LA CALIDAD Y AUDITORIA"))
-    assert "GESTION DE LA CALIDAD Y AUDITORIA" in browser.title, "El título no coincide con el de la página"
+    assert courseTitle in browser.title, "El título no coincide con el de la página"
 
 #TEST CASE N°4: Visualización del siguiente texto en algún lugar del aula virtual, al iniciar sesión: 'no deberá registrar deuda luego del día 10 de cada mes.'
 def test_verify_payment_due_text(browser):
