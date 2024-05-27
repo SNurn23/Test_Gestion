@@ -91,7 +91,6 @@ def test_verify_payment_due_text(browser):
     #Va a verificar que dentro de ese bloque se encuentre el texto esperado
     assert "no deberá registrar deuda luego del día 10 de cada mes." in payment_due_text.text, "El texto no se encontró en el aula virtual" 
 
-#------------------------------------------------------------
 # TEST CASE N°5: Búsqueda de materia exitosa desde "Todos los cursos"
 def test_search_course_from_all_courses(browser):
     login(browser, USER, PASSWORD)
@@ -213,7 +212,6 @@ def test_download_pdf(browser):
     file_path = os.path.join(download_dir, file_name)
     assert os.path.exists(file_path), f"El archivo {file_name} no se descargó correctamente"
    
-#------------------------------------------------------------
 # TEST CASE N°8 : Se debe verificar que al iniciar sesión se visualice correctamente la respuesta a la pregunta frecuente “Todos tenemos USUARIO?”
 def test_response_frequently_question(browser):
     login(browser,USER, PASSWORD)
