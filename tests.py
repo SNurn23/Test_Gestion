@@ -10,8 +10,8 @@ import time
 import os
 
 #VARIABLES DE CONFIRACION PARA EJECUCION DE PRUEBAS:
-USER = "67112"
-PASSWORD = "axel1530139"
+USER = "..."
+PASSWORD = "..."
 #Ruta donde se descargara pdf requerido por test 7 : 
 RUTA_DESCARGA = r"C:\Users\axelx\Descargas"
 
