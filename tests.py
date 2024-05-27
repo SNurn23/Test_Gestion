@@ -44,7 +44,7 @@ def test_login_valid_credentials(browser):
 
     login(browser,USER, PASSWORD)
     
-    # Verificar que el inicio de sesión fue exitoso redirigiendo a la página principal del campuscls
+    # Verificar que el inicio de sesión fue exitoso redirigiendo a la página principal del campus
     assert "https://campusvirtual.ugd.edu.ar/moodle/" == browser.current_url
 
 #TEST CASE N°2: Error en inicio de sesión con credenciales inválidas
@@ -63,7 +63,7 @@ def test_correct_title_course(browser):
 
     login(browser,USER, PASSWORD)
 
-    #Se esperará un maximo de 10 segundos hasta que la sección "Mis cursos" se cargue en la página
+    #Se esperará un maximo de 60 segundos hasta que la sección "Mis cursos" se cargue en la página
     WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.ID, "frontpage-course-list")))    
     
     #Obtener el enlace del curso "GESTION DE LA CALIDAD Y AUDITORIA" en la lista de Mis cursos
